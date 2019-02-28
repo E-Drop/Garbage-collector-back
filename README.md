@@ -53,17 +53,17 @@ location - String // required
 Garbage model
 
 ```
+donator_name - String // required
 name - String // required
-number - Number // required & unique
-location - String // required
+number - Number // required
+location - String //
 status - String // default pending
 ```
 
 Collection model
 
 ```
-nameVolunteer - String // required & unique
-nameDonator - String // required & unique
+volunteer_name - String // required & unique
 garbage - { type: Schema.Types.ObjectId, ref: 'Garbage' },
 ```
 
@@ -101,6 +101,7 @@ garbage - { type: Schema.Types.ObjectId, ref: 'Garbage' },
 - POST /donate
   - (500) server error
   - body:
+    - username
     - name
     - number
     - location
