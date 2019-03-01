@@ -12,7 +12,7 @@ require('dotenv').config();
 
 const auth = require('./routes/auth');
 const donate = require('./routes/donate');
-const collection = require('./routes/collections')
+const collection = require('./routes/collections');
 
 mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,

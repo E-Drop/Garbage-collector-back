@@ -1,8 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
-const cloudinary = require('cloudinary');
-const cloudinaryStorage = require('multer-storage-cloudinary');
 const bcrypt = require('bcrypt');
 
 const User = require('../models/user');
@@ -18,6 +15,16 @@ router.get('/me', (req, res, next) => {
     });
   }
 });
+
+router.post('/update', (req, res, next) => {
+  const { id, username, location, imageURL } = req.body;
+  User.findByIdAndUpdate(id,{ username, location, imageURL },{new: true})
+      .then((data) => {
+          res.json(data);
+      })
+      .catch(next);
+  
+})
 
 router.post('/login', (req, res, next) => {
   if (req.session.currentUser) {
