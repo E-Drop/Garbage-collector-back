@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const garbageSchema = new Schema({
   username: { type: String, required: true },
-  name: { type: String, required: true },
-  number: { type: String, required: true},
+  tinsnumber: { type: String, required: true },
+  bottlesnumber: { type: String, required: true},
   location: { type: String, required: true },
   status: {
     type: String,

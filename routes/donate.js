@@ -7,15 +7,15 @@ const Garbage = require('../models/garbage');
 router.post('/', (req, res, next) => {
     const {
         username,
-        name,
-        number,
+        tinsnumber,
+        bottlesnumber,
         location,
     } = req.body;
 
     const newGarbage = new Garbage({
         username,
-        name,
-        number,
+        tinsnumber,
+        bottlesnumber,
         location,
     });
 
